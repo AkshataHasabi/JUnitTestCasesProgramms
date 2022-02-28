@@ -2,6 +2,10 @@ package com.bridgelab;
 import java.util.regex.Pattern;
 public class MoodAnalyzer {
 
+    public static void main(String[] args) {
+        System.out.println("welcome to junit testing programms");
+    }
+
     public String checkSad(String string) {
         if(string.contains("sad")){
             return "SAD";
