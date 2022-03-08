@@ -4,7 +4,17 @@ import com.bridgelab.MoodAnalyzer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Scanner;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class MoodAnalyserTest {
+    static Scanner scanner = new Scanner(System.in);
+
+    @org.junit.jupiter.api.BeforeEach
+    void setUp() {
+        System.out.println("welcome to user registration regex");
+    }
 
     @Test
     void checkMood() {
@@ -45,6 +55,13 @@ public class MoodAnalyserTest {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
         boolean result = moodAnalyzer.checkEmail("akshuh818@gmail.com");
         Assertions.assertEquals(true, result);
+    }
+
+    @org.junit.jupiter.api.Test
+    void userFirstName() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        boolean firstName = moodAnalyzer.userFirstName("abc");
+        assertEquals(false,firstName);
     }
 }
 
