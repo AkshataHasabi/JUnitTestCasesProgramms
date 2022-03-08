@@ -63,5 +63,12 @@ public class MoodAnalyserTest {
         boolean firstName = moodAnalyzer.userFirstName("abc");
         assertEquals(false,firstName);
     }
+
+    @Test
+    void userLastName() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        boolean lastName = moodAnalyzer.userLastName("hasabi1");
+        assertEquals(false,lastName);
+    }
 }
 

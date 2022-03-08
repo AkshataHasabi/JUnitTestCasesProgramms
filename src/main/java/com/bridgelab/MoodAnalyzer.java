@@ -48,4 +48,18 @@ public class MoodAnalyzer {
         }
         return value;
     }
+
+    public boolean userLastName(String lastName){
+        Pattern pattern = Pattern.compile("[A-Z]{1}[a-zA-Z]+");
+        Matcher matcher = pattern.matcher(lastName);
+        boolean value = matcher.matches();
+        if(!matcher.matches()){
+            try {
+                throw new UserDefineCustomException("Invalid last name exception");
+            } catch (UserDefineCustomException e) {
+                e.printStackTrace();
+            }
+        }
+        return value;
+    }
 }
