@@ -63,11 +63,11 @@ public class MoodAnalyzer {
         return value;
     }
 
-    public boolean userEmail(String email){
+    public boolean userEmail(String email) {
         Pattern pattern = Pattern.compile("^[a-zA-Z]+[-\\+\\_\\.a-zA-Z0-9]+[@][a-zA-Z0-9]+([.]?[a-zA-Z\\,]{2,3}){2,3}");
         Matcher matcher = pattern.matcher(email);
         boolean value = matcher.matches();
-        if(!matcher.matches()){
+        if (!matcher.matches()) {
             try {
                 throw new UserDefineCustomException("Invalid email exception");
             } catch (UserDefineCustomException e) {
@@ -76,8 +76,6 @@ public class MoodAnalyzer {
         }
         return value;
     }
-<<<<<<< HEAD
-=======
 
     public boolean userPassword(String password){
         Pattern pattern = Pattern.compile("(.{8,}[A-Z0-9]?[+.$#@!&%*]?)");
@@ -92,5 +90,18 @@ public class MoodAnalyzer {
         }
         return value;
     }
->>>>>>> UC15_InvalidUserPassword
+
+    public boolean userMobileNumber(String mobileNumber){
+        Pattern pattern = Pattern.compile("^\\+[0-9]{2}[ ][1-9][0-9]{9}$");
+        Matcher matcher = pattern.matcher(mobileNumber);
+        boolean value = matcher.matches();
+        if(!matcher.matches()){
+            try {
+                throw new UserDefineCustomException("Invalid mobieNumber exception");
+            } catch (UserDefineCustomException e) {
+                e.printStackTrace();
+            }
+        }
+        return value;
+    }
 }

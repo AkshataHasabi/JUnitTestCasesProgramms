@@ -90,5 +90,11 @@ public class MoodAnalyserTest {
         boolean result = moodAnalyzer.userPassword("+123abc");
         Assertions.assertEquals(false, result);
     }
+    @Test
+    void givenMobileNumberPattern_WhenNotProper_ShouldReturnFalse() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        boolean result = moodAnalyzer.userMobileNumber("+ad14");
+        Assertions.assertEquals(false, result);
+    }
 }
 
