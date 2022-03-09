@@ -76,4 +76,18 @@ public class MoodAnalyzer {
         }
         return value;
     }
+
+    public boolean userPassword(String password){
+        Pattern pattern = Pattern.compile("(.{8,}[A-Z0-9]?[+.$#@!&%*]?)");
+        Matcher matcher = pattern.matcher(password);
+        boolean value = matcher.matches();
+        if(!matcher.matches()){
+            try {
+                throw new UserDefineCustomException("Invalid password exception");
+            } catch (UserDefineCustomException e) {
+                e.printStackTrace();
+            }
+        }
+        return value;
+    }
 }

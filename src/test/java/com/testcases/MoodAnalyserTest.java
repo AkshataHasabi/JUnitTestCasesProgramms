@@ -77,5 +77,11 @@ public class MoodAnalyserTest {
         boolean result = moodAnalyzer.userEmail(".akshuh818@gmail.com");
         Assertions.assertEquals(false, result);
     }
+    @Test
+    void givenPasswordPattern_WhenNotProper_ShouldReturnFalse() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        boolean result = moodAnalyzer.userPassword("+123abc");
+        Assertions.assertEquals(false, result);
+    }
 }
 
