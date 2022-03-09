@@ -62,4 +62,18 @@ public class MoodAnalyzer {
         }
         return value;
     }
+
+    public boolean userEmail(String email){
+        Pattern pattern = Pattern.compile("^[a-zA-Z]+[-\\+\\_\\.a-zA-Z0-9]+[@][a-zA-Z0-9]+([.]?[a-zA-Z\\,]{2,3}){2,3}");
+        Matcher matcher = pattern.matcher(email);
+        boolean value = matcher.matches();
+        if(!matcher.matches()){
+            try {
+                throw new UserDefineCustomException("Invalid email exception");
+            } catch (UserDefineCustomException e) {
+                e.printStackTrace();
+            }
+        }
+        return value;
+    }
 }
