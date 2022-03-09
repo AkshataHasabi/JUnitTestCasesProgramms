@@ -58,7 +58,7 @@ public class MoodAnalyserTest {
     }
 
     @org.junit.jupiter.api.Test
-    void givenFirstName_WhenNotProper_ShouldReturnFalse() {
+    void givenFirName_WhenProper_ShouldReturnFalse() {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
         boolean firstName = moodAnalyzer.userFirstName("abc");
         assertEquals(false,firstName);
@@ -74,8 +74,8 @@ public class MoodAnalyserTest {
     @Test
     void givenEmailPattern_WhenNotProper_ShouldReturnFalse() {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        boolean lastName = moodAnalyzer.userLastName("hasabi1");
-        assertEquals(false,lastName);
+        boolean result = moodAnalyzer.userEmail(".akshuh818@gmail.com");
+        Assertions.assertEquals(false, result);
     }
 }
 
