@@ -72,10 +72,17 @@ public class MoodAnalyserTest {
     }
 
     @Test
+    void givenLastName_WhenNotProper_ShouldReturnfalse() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        boolean lastName = moodAnalyzer.userLastName("hasabi12");
+        assertEquals(false,lastName);
+    }
+
+    @Test
     void givenEmailPattern_WhenNotProper_ShouldReturnFalse() {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        boolean lastName = moodAnalyzer.userLastName("hasabi1");
-        assertEquals(false,lastName);
+        boolean result = moodAnalyzer.checkEmail("akshuh818@1gmail.com");
+        Assertions.assertEquals(false, result);
     }
 }
 
