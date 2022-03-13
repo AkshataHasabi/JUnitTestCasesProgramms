@@ -103,5 +103,12 @@ public class MoodAnalyserTest {
         boolean result = moodAnalyzer.checkFirstName.validUserRegistration("Akshata");
         Assertions.assertEquals(true, result);
     }
+
+    @Test
+    void givenLastName_WhenProper_ShouldReturnTrue() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        boolean result = moodAnalyzer.checkLastName.validUserRegistration("Hasabi");
+        Assertions.assertEquals(true, result);
+    }
 }
 

@@ -109,4 +109,9 @@ public class MoodAnalyzer {
         boolean value = Pattern.matches("[A-Z]{1}[a-zA-Z]+",firstName);
         return value;
     };
+
+    public IUserRegistration checkLastName = lastName-> {
+        boolean value = Pattern.matches("[A-Z]{1}[a-zA-Z]+",lastName);
+        return value;
+    };
 }
