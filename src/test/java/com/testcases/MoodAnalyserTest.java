@@ -96,5 +96,12 @@ public class MoodAnalyserTest {
         boolean result = moodAnalyzer.userMobileNumber("+ad14");
         Assertions.assertEquals(false, result);
     }
+
+    @Test
+    void givenFirstName_WhenProper_ShouldReturnTrue() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        boolean result = moodAnalyzer.checkFirstName.validUserRegistration("Akshata");
+        Assertions.assertEquals(true, result);
+    }
 }
 
