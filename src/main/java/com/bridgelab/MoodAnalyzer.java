@@ -124,4 +124,9 @@ public class MoodAnalyzer {
         boolean value = Pattern.matches("(.{8,}[A-Z0-9]?[+.$#@!&%*]?)", password);
         return value;
     };
+
+    public IUserRegistration checkMobileNumber = mobileNumber-> {
+        boolean value = Pattern.matches("^\\+[0-9]{2}[ ][1-9][0-9]{9}$", mobileNumber);
+        return value;
+    };
 }

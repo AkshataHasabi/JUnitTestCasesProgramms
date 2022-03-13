@@ -124,5 +124,12 @@ public class MoodAnalyserTest {
         boolean result = moodAnalyzer.checkPassword.validUserRegistration("akshu123");
         Assertions.assertEquals(true, result);
     }
+
+    @Test
+    void givenMobileNumber_WhenProper_ShouldReturnTrue() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        boolean result = moodAnalyzer.checkMobileNumber.validUserRegistration("+91 7022595577");
+        Assertions.assertEquals(true, result);
+    }
 }
 
