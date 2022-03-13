@@ -110,5 +110,12 @@ public class MoodAnalyserTest {
         boolean result = moodAnalyzer.checkLastName.validUserRegistration("Hasabi");
         Assertions.assertEquals(true, result);
     }
+
+    @Test
+    void givenEmail_WhenProper_ShouldReturnTrue() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        boolean result = moodAnalyzer.checkEmail.validUserRegistration("akshu123@gmail.com");
+        Assertions.assertEquals(true, result);
+    }
 }
 
