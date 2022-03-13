@@ -119,4 +119,9 @@ public class MoodAnalyzer {
         boolean value = Pattern.matches("^[a-zA-Z]+[-\\+\\_\\.a-zA-Z0-9]+[@][a-zA-Z0-9]+([.]?[a-zA-Z\\,]{2,3}){2,3}", email);
         return value;
     };
+
+    public IUserRegistration checkPassword = password-> {
+        boolean value = Pattern.matches("(.{8,}[A-Z0-9]?[+.$#@!&%*]?)", password);
+        return value;
+    };
 }
